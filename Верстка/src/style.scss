@@ -30,17 +30,36 @@ body {
     padding: 1rem;
     border-right: 1px solid #eaeaea;
     border-bottom: 1px solid #eaeaea;
+
+    &:nth-child(3n) {
+      border-right: 0px;
+    }
   }
 
   @media screen and (max-width: 750px) {
     .main-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .tile {
+      &:nth-child(1n) {
+        border-right: 1px solid #eaeaea;
+      }
+      &:nth-child(2n) {
+        border-right: 0px;
+      }
+    }
   }
 
   @media screen and (max-width: 450px) {
     .main-grid {
       grid-template-columns: 1fr;
+    }
+    .tile {
+      border: 0px !important;
+      border-bottom: 1px solid #eaeaea !important;
+      &:last-child {
+        border-bottom: 0 !important;
+      }
     }
   }
 }
