@@ -1,0 +1,46 @@
+@import '~materialize-css/sass/materialize.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: 'Roboto', sans-serif;
+
+  .wrapped-container {
+    max-width: 1100px;
+    text-align: center;
+    margin: 0 auto;
+
+    .main {
+      text-align: center;
+    }
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1rem;
+  }
+
+  .tile {
+    &__title,
+    &__price {
+      text-align: left;
+      word-wrap: break-word;
+    }
+    padding: 1rem;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  @media screen and (max-width: 750px) {
+    .main-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .main-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
